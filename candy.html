@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+ <title>Candy page</title>
+<body>
+
+<h2>Teja Reddy Dasari chooses candy</h2>
+
+<form>
+    <label for="form1_age">Dark Chocolate</label>
+    <input type ="checkbox" id="d" name="form1_age" value=True> <br>
+
+    <label for="form1_nick">Nuts</label>
+    <input type ="checkbox" id="n" name="form1_nick" value=True> <br>
+
+    <label for="form1_chewy">Chewy </label>
+    <input type ="checkbox" id="r" name="form1_chewy" value=False> <br>
+
+    <input type="button" onclick="selectBox()" value="Select a box ">
+</form>
+<p id="result">This text will be replaced </p>
+<form>
+    <label for="form1_size">Enter the size </label>
+    <input type ="text" id="s" name="form1_size" value="size"> <br>
+
+    <label for="form1_price">Enter price</label>
+    <input type ="text" id="p" name="form1_price" > <br>
+
+    <input type="button" onclick="updateBox()" value="Update the box">
+</form>
+<p id="resultt">This text will be replaced </p>
+
+
+
+<script> 
+
+function updateBox(){
+    
+    var toShow = ""
+    console.log("Getting form values")
+    size = document.getElementById("s").value
+    price = document.getElementById("p").value
+    dark = document.getElementById("d").checked
+    nuts = document.getElementById("n").checked
+    chewy = document.getElementById("r").checked
+
+    if(dark){
+        my_candy_box.size=price;
+    }
+    if(nuts){
+        my_candy_box.size=price;
+    }
+    if(chewy){
+        my_candy_box.size=price;
+    }
+    
+    out = document.getElementById("resultt")
+    out.innerHTML = JSON.stringify(my_candy_box);
+}
+
+
+var  my_candy_box={};
+function selectBox (){
+    my_candy_box={};
+    console.log("Getting form values")
+    
+    dark = document.getElementById("d").checked
+    nuts = document.getElementById("n").checked
+    chewy = document.getElementById("r").checked
+    
+    out = document.getElementById("result")
+    if(dark){
+        my_candy_box.dark=true;
+    } 
+    else{
+        my_candy_box.dark=false;
+    } 
+    if(nuts){
+        my_candy_box.nuts=true;
+    } 
+    else{
+        my_candy_box.nuts=false;
+    } 
+    if(chewy){
+        my_candy_box.chewy=true;
+    } 
+    else{
+        my_candy_box.chewy=false;
+    } 
+    out.innerHTML = JSON.stringify(my_candy_box);
+}
+</script>
+
+</body>
+</html>
+
+</body>
+</html> 
