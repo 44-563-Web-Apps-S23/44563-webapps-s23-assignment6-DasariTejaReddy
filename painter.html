@@ -41,7 +41,29 @@ function checkPainter (){
 }
 </script>
 
-
-
+<div class="container-fluid">
+    <img src="Salvia.webp" class="img-fluid" id="image" alt="Salvia", onclick=selectImage() height=100, width=100>    
+</div>
+<script>
+    useImage =1
+    function selectImage(){
+        switch(useImage){
+            case 1:
+                document.getElementById("image").src="Dahlia.jpg";
+                useImage++;
+                break
+            case 2:
+                document.getElementById("image").src="Abies.jpg";
+                useImage++;
+                break;
+            case 3:
+                document.getElementById("image").src="Salvia.webp";
+                useImage=1
+                break;
+        }
+    }
+</script>
 </body>
-</html> 
+</html>
+
+
